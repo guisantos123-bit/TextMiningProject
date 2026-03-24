@@ -66,9 +66,9 @@ Dataset:
 
 ## Project Structure
 
-TextMiningProject.ipynb # NLP + classification pipeline
-PokemonSearcher.ipynb # Search engine implementation
-data/ # Datasets (scraped + processed)
+- TextMiningProject.ipynb: # NLP + classification pipeline
+- PokemonSearcher.ipynb: # Search engine implementation
+- data/ # Datasets (scraped + processed)
 
 ---
 
