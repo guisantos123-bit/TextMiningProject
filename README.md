@@ -1,27 +1,94 @@
-# TextMiningProject
-Pokémon Classification Model and Search for Pokémons using Fuzzy Matching
+# Pokémon NLP Classification & Search Engine
 
-## Abstract
-This repository explores the intersection of Natural Language Processing (NLP), Web Scraping, and Search Algorithms within the Pokémon universe. It features a complete data science pipeline that extracts unstructured biological text data from the web, builds machine learning classification models, and implements a smart, fuzzy-matching search engine capable of understanding natural language queries.
+This project combines Natural Language Processing (NLP), Machine Learning, and Web Scraping to build:
 
-## Key Features
+- A natural language search engine for Pokémon
+- A text classification model that predicts Pokémon types from descriptions
 
-### Web Scraping & Text Classification (TextMiningProject.ipynb)
+---
 
--Data Extraction: Automated web scraping of over 1,000 Pokémon biology descriptions directly from Bulbapedia using BeautifulSoup.
--NLP Preprocessing: Comprehensive text cleaning including tokenization, stopword removal, and lemmatization using NLTK.
--Topic Modeling: Applied Non-Negative Matrix Factorization (NMF) alongside TF-IDF vectorization to discover latent biological themes (e.g., aquatic features, avian characteristics).
--Predictive Modeling: Trained and evaluated multiple Machine Learning classifiers (Logistic Regression, Random Forest, and Multinomial Naive Bayes) to predict a Pokémon's primary type strictly based on its text description.
+## Key Results
 
-### Pokemon Search (PokemonSearcher.ipynb)
--Natural Language Parsing: Processes user-inputted descriptions (e.g., "ataque alto, tipo fogo, rápido, pesado").
--Fuzzy Matching: Leverages Levenshtein distance (rapidfuzz) to correct typos and map informal user queries to exact Pokémon types and attributes.
--Dynamic Statistical Filtering: Translates qualitative terms (like "high" or "low") into quantitative DataFrame filters based on the 25th and 75th percentiles of base stats.
--Scoring System: Calculates a relevance score for each match based on the number of met criteria, returning an accurately sorted Top 5 list of Pokémon.
+- Logistic Regression: 82% accuracy  
+- Naive Bayes: 81% accuracy  
+- Random Forest: 76% accuracy  
 
-Language: Python
-Data Collection: requests, BeautifulSoup4
-Data Manipulation: pandas, numpy
-NLP: nltk, unidecode
-Machine Learning: scikit-learn
-String Matching: rapidfuzz, python-Levenshtein
+Dataset:
+- 1000+ Pokémon descriptions (web scraped from Bulbapedia)
+- 800 Pokémon statistics
+---
+
+## Features
+
+### Natural Language Search Engine
+- Interprets user queries such as:
+  - "fast, strong, fire type"
+- Uses:
+  - Fuzzy matching (Levenshtein distance)
+  - Statistical filtering based on Pokémon attributes
+- Returns:
+  - Top 5 most relevant Pokémon ranked by similarity score
+
+---
+
+### Pokémon Type Predictor
+- Predicts Pokémon type from text descriptions
+- Pipeline includes:
+  - Text preprocessing (tokenization, lemmatization)
+  - TF-IDF vectorization
+  - Supervised learning models:
+    - Logistic Regression
+    - Random Forest
+    - Naive Bayes
+
+---
+
+## How It Works
+
+1. Web scraping from Bulbapedia  
+2. Text preprocessing (NLTK)  
+3. TF-IDF vectorization  
+4. Model training and evaluation  
+5. Query processing with fuzzy matching  
+
+---
+
+## Tech Stack
+
+- Python  
+- NLP: NLTK  
+- Machine Learning: Scikit-learn  
+- Data Processing: Pandas, NumPy  
+- Web Scraping: BeautifulSoup, Requests  
+- Fuzzy Matching: RapidFuzz  
+
+---
+
+## Project Structure
+
+TextMiningProject.ipynb # NLP + classification pipeline
+PokemonSearcher.ipynb # Search engine implementation
+data/ # Datasets (scraped + processed)
+
+---
+
+## Report
+
+For a detailed explanation of methodology and results, see:
+Relatório_TextMining_120090_120081.pdf
+
+---
+
+## Future Improvements
+
+- Use advanced NLP models (Word2Vec, BERT, Transformers)  
+- Deploy as a web application (Streamlit or Flask)  
+- Improve semantic understanding of queries  
+
+---
+
+## Author
+
+Guilherme Santos  
+gmfts0609@gmail.com  
+https://github.com/guisantos123-bit
